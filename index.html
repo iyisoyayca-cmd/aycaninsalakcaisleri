@@ -1,107 +1,122 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yanındayım</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yanındayım</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      font-family: 'Georgia', serif;
-      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-    }
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(to bottom, #b3e5fc, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
 
-    .container {
-      max-width: 600px;
-      padding: 30px;
-      background: rgba(0,0,0,0.35);
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255,255,255,0.15);
-      animation: fadeIn 2.5s ease;
-    }
+/* Bulut efekti */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url("https://i.imgur.com/NM3Yz9Q.png");
+  background-size: contain;
+  opacity: 0.35;
+  animation: clouds 60s linear infinite;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+@keyframes clouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
-    p {
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  background: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background: #ffffff;
-      color: #2c5364;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      width: 100%;
-    }
+.fade {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
 
-    button:hover {
-      background: #e0e0e0;
-    }
+.fade:nth-child(1) { animation-delay: 0.5s; }
+.fade:nth-child(2) { animation-delay: 1.5s; }
+.fade:nth-child(3) { animation-delay: 2.5s; }
+.fade:nth-child(4) { animation-delay: 3.5s; }
+.fade:nth-child(5) { animation-delay: 4.5s; }
+.fade:nth-child(6) { animation-delay: 5.5s; }
+.fade:nth-child(7) { animation-delay: 6.5s; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Günaydın Ayşe Ablaaa 😍</h1>
+<div class="container">
+  <p class="fade"><strong>Günaydın Ayşe Ablaaa 😍</strong></p>
 
-    <p>“A bu deli yine nelerle uğraşıyor” diye düşünebilirsin,
-    valla haklısın ama öyle içimden geldi 😂</p>
+  <p class="fade">“A bu deli yine nelerle uğraşıyor” diye düşünebilirsin,
+  valla haklısın ama öyle içimden geldi 😂</p>
 
-    <p>Bazılarının yüreğe iyi gelen bir yanı vardır diyorlar ya…
-    heh, orada bahsedilen bazılarının en başında sen varsın bence.
-    Abartmıyorum da.
-    Hayatına girdiğin herkesin hayatını güzelleştirirsin sen.</p>
+  <p class="fade">Bazılarının yüreğe iyi gelen bir yanı vardır diyorlar ya…
+  heh, orada bahsedilen bazılarının en başında sen varsın bence.
+  Abartmıyorum da.
+  Hayatına girdiğin herkesin hayatını güzelleştirirsin sen.</p>
 
-    <p>Neyse, öyle büyük laflar edip destan yazmak için değil bu;
-    ama her zaman yanında olduğumu bil istedim.
-    Sebepsiz de.</p>
+  <p class="fade">Neyse, öyle büyük laflar edip destan yazmak için değil bu;
+  ama her zaman yanında olduğumu bil istedim.
+  Sebepsiz de.</p>
 
-    <p>Yani gün istediğin gibi ilerlemese bile,
-    kahven soğusa da,
-    planlar karışsa da
-    (pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),
-    çığlıklar yardım çığlıkları diye bağırmakta gelse içinden unutma;
-    sen aklına koyduğun her şeyi başarırsın.
-    Senin inanılmaz bir gücün var
-    ve de sevgin de var 😂😂💪🏻</p>
+  <p class="fade">Yani gün istediğin gibi ilerlemese bile,
+  kahven soğusa da,
+  planlar karışsa da
+  (pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),
+  unutma;
+  sen aklına koyduğun her şeyi başarırsın.
+  Senin inanılmaz bir gücün var
+  ve de sevgin de var 😂😂💪🏻</p>
 
-    <p>Bir de seni çok önemseyen,
-    e tabii sevennn,
-    her zaman darlayan,
-    yaşının yarısı büyüklüğünde (50/2 😂😂)
-    ve yüzünde hep gülümseme olsun isteyen
-    biri var, bunu da unutma ♥️</p>
+  <p class="fade">Bir de seni çok önemseyen,
+  e tabii sevennn,
+  her zaman darlayan,
+  yaşının yarısı büyüklüğünde (50/2 😂😂)
+  ve yüzünde hep gülümseme olsun isteyen
+  biri var, bunu da unutma ♥️</p>
 
-    <p><strong>Günün azıcık tebessümle başlasın istedim 😂😍♥️</strong></p>
+  <p class="fade"><strong>Günün azıcık tebessümle başlasın istedim 😂😍♥️</strong></p>
 
-    <button onclick="document.getElementById('music').play()">
-      🎵 Müziği başlat
-    </button>
+  <button onclick="document.getElementById('music').play()">🎵 Müziği başlat</button>
 
-    <audio id="music">
-      <source src="https://archive.org/download/yeniden-baslamali/yeniden-baslamali.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+  <audio id="music">
+    <source src="https://archive.org/download/husnu-arkan-yeniden-baslamali/H%C3%BCsn%C3%BC%20Arkan%20-%20Yeniden%20Ba%C5%9Flamal%C4%B1.mp3" type="audio/mpeg">
+  </audio>
+</div>
 
 </body>
 </html>
