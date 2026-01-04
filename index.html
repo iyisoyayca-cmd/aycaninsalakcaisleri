@@ -9,114 +9,122 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Georgia, serif;
-  background: linear-gradient(to bottom, #b3e5fc, #ffffff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    #87CEEB 0%,
+    #B0E0E6 60%,
+    #FFFFFF 100%
+  );
+  font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
 
-/* Bulut efekti */
-body::before {
-  content: "";
+/* Bulutlar */
+.clouds {
   position: fixed;
   top: 0;
   left: 0;
   width: 200%;
   height: 100%;
-  background: url("https://i.imgur.com/NM3Yz9Q.png");
+  background: url("https://i.imgur.com/7b1K7Qp.png") repeat-x;
   background-size: contain;
-  opacity: 0.35;
-  animation: clouds 60s linear infinite;
+  animation: moveClouds 90s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes clouds {
+@keyframes moveClouds {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
+/* Yazı alanı */
 .container {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  background: rgba(255,255,255,0.85);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 120px;
+  color: #2c3e50;
+  font-size: 18px;
+  line-height: 1.7;
+  white-space: pre-line;
+  animation: fadeIn 2s ease forwards;
 }
-
-.fade {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
-
-.fade:nth-child(1) { animation-delay: 0.5s; }
-.fade:nth-child(2) { animation-delay: 1.5s; }
-.fade:nth-child(3) { animation-delay: 2.5s; }
-.fade:nth-child(4) { animation-delay: 3.5s; }
-.fade:nth-child(5) { animation-delay: 4.5s; }
-.fade:nth-child(6) { animation-delay: 5.5s; }
-.fade:nth-child(7) { animation-delay: 6.5s; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 25px;
+/* Müzik butonu */
+.music-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 24px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 30px;
   cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 </style>
 </head>
 
 <body>
 
+<div class="clouds"></div>
+
 <div class="container">
-  <p class="fade"><strong>Günaydın Ayşe Ablaaa 😍</strong></p>
+Günaydın Ayşe Ablaaa 😍  
 
-  <p class="fade">“A bu deli yine nelerle uğraşıyor” diye düşünebilirsin,
-  valla haklısın ama öyle içimden geldi 😂</p>
+“A bu deli yine nelerle uğraşıyor” diye düşünebilirsin,  
+valla haklısın ama öyle içimden geldi 😂  
 
-  <p class="fade">Bazılarının yüreğe iyi gelen bir yanı vardır diyorlar ya…
-  heh, orada bahsedilen bazılarının en başında sen varsın bence.
-  Abartmıyorum da.
-  Hayatına girdiğin herkesin hayatını güzelleştirirsin sen.</p>
+Bazılarının yüreğe iyi gelen bir yanı vardır diyorlar ya…  
+heh, orada bahsedilen bazılarının en başında sen varsın bence.  
+Abartmıyorum da.  
+Hayatına girdiğin herkesin hayatını güzelleştirirsin sen.  
 
-  <p class="fade">Neyse, öyle büyük laflar edip destan yazmak için değil bu;
-  ama her zaman yanında olduğumu bil istedim.
-  Sebepsiz de.</p>
+Neyse, öyle büyük laflar edip destan yazmak için değil bu;  
+ama her zaman yanında olduğumu bil istedim.  
+Sebepsiz de.  
 
-  <p class="fade">Yani gün istediğin gibi ilerlemese bile,
-  kahven soğusa da,
-  planlar karışsa da
-  (pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),
-  unutma;
-  sen aklına koyduğun her şeyi başarırsın.
-  Senin inanılmaz bir gücün var
-  ve de sevgin de var 😂😂💪🏻</p>
+Gün istediğin gibi ilerlemese bile,  
+kahven soğusa da,  
+planlar karışsa da  
+(pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),  
+“çığlıklar yardım çığlıkları” diye bağırmak gelse içinden  
+unutma;  
+sen aklına koyduğun her şeyi başarırsın.  
+Senin inanılmaz bir gücün var  
+ve sevgin de var 😂💪🏻  
 
-  <p class="fade">Bir de seni çok önemseyen,
-  e tabii sevennn,
-  her zaman darlayan,
-  yaşının yarısı büyüklüğünde (50/2 😂😂)
-  ve yüzünde hep gülümseme olsun isteyen
-  biri var, bunu da unutma ♥️</p>
+Bi de seni çok önemseyen,  
+e tabii sevennn,  
+her zaman darlayan,  
+yaşının yarısı büyüklüğünde (50/2 😂😂)  
+ve yüzünde hep gülümseme olsun isteyen  
+biri var…  
+bunu da unutma ♥️  
 
-  <p class="fade"><strong>Günün azıcık tebessümle başlasın istedim 😂😍♥️</strong></p>
+Günün azıcık tebessümle başlasın istedim 😂😍♥️  
 
-  <button onclick="document.getElementById('music').play()">🎵 Müziği başlat</button>
-
-  <audio id="music">
-    <source src="https://archive.org/download/husnu-arkan-yeniden-baslamali/H%C3%BCsn%C3%BC%20Arkan%20-%20Yeniden%20Ba%C5%9Flamal%C4%B1.mp3" type="audio/mpeg">
-  </audio>
+<div class="music-btn" onclick="playMusic()">🎵 Müziği başlat</div>
 </div>
+
+<audio id="music">
+  <source src="yeniden-baslamali.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  const audio = document.getElementById("music");
+  audio.play();
+}
+</script>
 
 </body>
 </html>
