@@ -1,71 +1,108 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Yanındayım</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yanındayım</title>
 
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #fceabb, #f8b500);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
 
-.card {
-  background: white;
-  padding: 28px;
-  border-radius: 18px;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-  animation: fadeIn 2s ease;
-}
+    .container {
+      max-width: 600px;
+      padding: 30px;
+      background: rgba(0,0,0,0.35);
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.15);
+      animation: fadeIn 2.5s ease;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-button {
-  margin-top: 16px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 20px;
-  background: #f8b500;
-  color: white;
-  font-size: 14px;
-}
-</style>
+    p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background: #ffffff;
+      color: #2c5364;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #e0e0e0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h2>Günaydın Ayşe ☀️</h2>
-  <p>
-    Bazı insanların yüreğe iyi gelen bir yanı vardır…<br>
-    sen benim için tam olarak busun.<br><br>
-    Yanındayım. Sebepsiz de 🤍
-  </p>
+  <div class="container">
+    <h1>Günaydın Ayşe Ablaaa 😍</h1>
 
-  <button onclick="playMusic()">🎵 Müzik Aç</button>
-</div>
+    <p>“A bu deli yine nelerle uğraşıyor” diye düşünebilirsin,
+    valla haklısın ama öyle içimden geldi 😂</p>
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+    <p>Bazılarının yüreğe iyi gelen bir yanı vardır diyorlar ya…
+    heh, orada bahsedilen bazılarının en başında sen varsın bence.
+    Abartmıyorum da.
+    Hayatına girdiğin herkesin hayatını güzelleştirirsin sen.</p>
 
-<script>
-function playMusic() {
-  document.getElementById("bgMusic").play();
-}
-</script>
+    <p>Neyse, öyle büyük laflar edip destan yazmak için değil bu;
+    ama her zaman yanında olduğumu bil istedim.
+    Sebepsiz de.</p>
+
+    <p>Yani gün istediğin gibi ilerlemese bile,
+    kahven soğusa da,
+    planlar karışsa da
+    (pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),
+    çığlıklar yardım çığlıkları diye bağırmakta gelse içinden unutma;
+    sen aklına koyduğun her şeyi başarırsın.
+    Senin inanılmaz bir gücün var
+    ve de sevgin de var 😂😂💪🏻</p>
+
+    <p>Bir de seni çok önemseyen,
+    e tabii sevennn,
+    her zaman darlayan,
+    yaşının yarısı büyüklüğünde (50/2 😂😂)
+    ve yüzünde hep gülümseme olsun isteyen
+    biri var, bunu da unutma ♥️</p>
+
+    <p><strong>Günün azıcık tebessümle başlasın istedim 😂😍♥️</strong></p>
+
+    <button onclick="document.getElementById('music').play()">
+      🎵 Müziği başlat
+    </button>
+
+    <audio id="music">
+      <source src="https://archive.org/download/yeniden-baslamali/yeniden-baslamali.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 
 </body>
 </html>
+
