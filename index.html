@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yanındayım</title>
+
 <style>
 body {
   margin: 0;
@@ -12,6 +13,7 @@ body {
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
+
 #overlay {
   position: fixed;
   top:0; left:0;
@@ -39,6 +41,7 @@ body {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
 .container {
   max-width: 720px;
   margin: 0 auto;
@@ -51,10 +54,12 @@ body {
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
 }
+
 .container.show {
   opacity: 1;
   transform: translateY(0);
 }
+
 .music-btn {
   display: inline-block;
   margin-top: 30px;
@@ -68,14 +73,17 @@ body {
 }
 </style>
 </head>
+
 <body>
+
 <div id="overlay">
   <div id="overlay-message">
     Sevgili Ayşe Aydın,<br>
     bu web sitesi sana özel mesajı almak için lütfen kalbe tıkla
   </div>
-  <div id="heart">💛</div>
+  <div id="heart">❤️</div>
 </div>
+
 <div class="container">
 Günaydın Ayşe Ablaaa 😍  
 
@@ -91,7 +99,7 @@ Neyse, öyle büyük laflar edip destan yazmak için değil bu;
 ama her zaman yanında olduğumu bil istedim.  
 Sebepsiz de.  
 
-Gün istediğin gibi ilerlese bile,  
+Gün istediğin gibi ilerlemese bile,  
 kahven soğusa da,  
 planlar karışsa da  
 (pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),  
@@ -113,21 +121,27 @@ Günün azıcık tebessümle başlasın istedim 😂😍♥️
 
 <div class="music-btn" onclick="playMusic()">🎵 Müziği başlat</div>
 </div>
+
 <audio id="music">
   <source src="yeniden-baslamali.mp3" type="audio/mpeg">
 </audio>
+
 <script>
 function playMusic() {
   const audio = document.getElementById("music");
   audio.play();
 }
+
 const overlay = document.getElementById("overlay");
 const container = document.querySelector(".container");
+
 overlay.addEventListener("click", () => {
   overlay.style.display = "none";
   container.classList.add("show");
   document.body.style.overflow = "auto";
 });
 </script>
+
 </body>
 </html>
+
