@@ -4,17 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yanındayım</title>
-
 <style>
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #bfe6ff; /* pastel açık mavi */
+  background-color: #bfe6ff;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* overlay için scroll gizle */
+  overflow: hidden;
 }
-
-/* ---------------- Başlangıç overlay ---------------- */
 #overlay {
   position: fixed;
   top:0; left:0;
@@ -30,23 +27,18 @@ body {
   z-index: 10;
   cursor: pointer;
 }
-
 #overlay #heart {
   font-size: 100px;
   color: yellow;
   transition: transform 0.3s ease;
 }
-
 #overlay #heart:hover {
   transform: scale(1.2);
 }
-
 #overlay #overlay-message {
   font-size: 20px;
   margin-bottom: 20px;
 }
-
-/* ---------------- Mevcut container ---------------- */
 .container {
   max-width: 720px;
   margin: 0 auto;
@@ -55,15 +47,14 @@ body {
   font-size: 18px;
   line-height: 1.7;
   white-space: pre-line;
-  animation: fadeIn 2s ease forwards;
-  opacity: 0; /* başlangıçta gizli */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.container.show {
+  opacity: 1;
+  transform: translateY(0);
 }
-
 .music-btn {
   display: inline-block;
   margin-top: 30px;
@@ -77,10 +68,7 @@ body {
 }
 </style>
 </head>
-
 <body>
-
-<!-- Başlangıç overlay -->
 <div id="overlay">
   <div id="overlay-message">
     Sevgili Ayşe Aydın,<br>
@@ -88,8 +76,6 @@ body {
   </div>
   <div id="heart">❤️</div>
 </div>
-
-<!-- Mevcut içerik -->
 <div class="container">
 Günaydın Ayşe Ablaaa 😍  
 
@@ -105,7 +91,7 @@ Neyse, öyle büyük laflar edip destan yazmak için değil bu;
 ama her zaman yanında olduğumu bil istedim.  
 Sebepsiz de.  
 
-Gün istediğin gibi ilerlemese bile,  
+Gün istediğin gibi ilerlese bile,  
 kahven soğusa da,  
 planlar karışsa da  
 (pazartesi öğretmenler odasını dolduran suratsızlar 😂 olsa da),  
@@ -127,26 +113,20 @@ Günün azıcık tebessümle başlasın istedim 😂😍♥️
 
 <div class="music-btn" onclick="playMusic()">🎵 Müziği başlat</div>
 </div>
-
 <audio id="music">
   <source src="yeniden-baslamali.mp3" type="audio/mpeg">
 </audio>
-
 <script>
 function playMusic() {
   const audio = document.getElementById("music");
   audio.play();
 }
-
-// ---------------- Overlay tıklama ----------------
 const overlay = document.getElementById("overlay");
 const container = document.querySelector(".container");
-
 overlay.addEventListener("click", () => {
-  overlay.style.display = "none";        // overlay gizlensin
-  container.style.opacity = "1";          // içerik görünür olsun
+  overlay.style.display = "none";
+  container.classList.add("show");
 });
 </script>
-
 </body>
 </html>
